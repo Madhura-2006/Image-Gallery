@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery Image Gallery</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css" >
+  <style>
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 class="text-center mt-4">Image Gallery with jQuery</h2>
+
+  <div class="filter-btns text-center mb-4">
+    <button class="btn btn-primary filter-btn" data-filter="all">All</button>
+    <button class="btn btn-secondary filter-btn" data-filter="fruit">Fruit</button>
+    <button class="btn btn-success filter-btn" data-filter="flower">Flower</button>
+    <button class="btn btn-warning filter-btn" data-filter="cities">Cities</button>
+  </div>
+
+  
+  <div class="row gallery-category fruit">
+    <div class="col-md-4 mb-4">
+      <img src="https://media.istockphoto.com/id/529664572/photo/fruit-background.jpg?s=612x612&w=0&k=20&c=K7V0rVCGj8tvluXDqxJgu0AdMKF8axP0A15P-8Ksh3I=" alt="Fruit" class="gallery-img d-block mx-auto">
+    </div>
+    <div class="col-md-4 mb-4">
+      <img src="https://images.everydayhealth.com/images/diet-nutrition/ordinary-fruits-with-amazing-health-benefits-05-1440x810.jpg" alt="Fruit" class="gallery-img d-block mx-auto">
+    </div>
+    <div class="col-md-4 mb-4">
+      <img src="https://images.pexels.com/photos/235294/pexels-photo-235294.jpeg?cs=srgb&dl=pexels-asphotograpy-235294.jpg&fm=jpg" alt="Fruit" class="gallery-img d-block mx-auto">
+    </div>
+  </div>
+
+ 
+  <div class="row gallery-category flower">
+    <div class="col-md-4 mb-4">
+      <img src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg" alt="Flower" class="gallery-img d-block mx-auto">
+    </div>
+    <div class="col-md-4 mb-4">
+      <img src="https://m.media-amazon.com/images/I/41e1LA0W3jL._AC_UF1000,1000_QL80_.jpg" alt="Flower" class="gallery-img d-block mx-auto">
+    </div>
+    <div class="col-md-4 mb-4">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuaCPHZvXA8tqyRHDSn5E1ZuxW-h5ocCJcMQ&s" alt="Flower" class="gallery-img d-block mx-auto">
+    </div>
+  </div>
+
+ 
+  <div class="row gallery-category cities">
+    <div class="col-md-4 mb-4">
+      <img src="https://afar.brightspotcdn.com/dims4/default/62a79f4/2147483647/strip/true/crop/3000x1500+0+231/resize/1440x720!/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2Faf%2F54%2F5842f50e4cc592a4b645de602504%2F10citiesrefresh-singapore-2.jpg" alt="Cities"class="gallery-img d-block mx-auto">
+    </div>
+    <div class="col-md-4 mb-4">
+      <img src="https://media.istockphoto.com/id/615398376/photo/new-york-city-nyc-usa.jpg?s=612x612&w=0&k=20&c=rlrsrt4jbORPDSOW5df06Ik_X_5iQo1rYQd53xSs4nw=" alt="Cities" class="gallery-img d-block mx-auto">
+    </div>
+    <div class="col-md-4 mb-4">
+      <img src="https://www.celebritycruises.com/blog/content/uploads/2024/02/most-beautiful-cities-in-the-world-vancouver-canada-1024x683.jpg" alt="Cities" class="gallery-img d-block mx-auto">
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.gallery-category').show();
+
+    $('.filter-btn').click(function () {
+      const filter = $(this).data('filter');
+
+      $('.filter-btn').removeClass('active');
+      $(this).addClass('active');
+
+      if (filter === 'all') {
+        $('.gallery-category').slideDown();
+      } else {
+        $('.gallery-category').hide();
+        $('.' + filter).slideDown();
+      }
+    });
+  });
+
+</script>
+
+</body>
+</html>
